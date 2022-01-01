@@ -1,0 +1,24 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Posts on Hugo Hermit</title>
+		<link>https://gafraser.github.io/gfraser/posts/</link>
+		<description>Recent content in Posts on Hugo Hermit</description>
+		<generator>Hugo -- gohugo.io</generator>
+		<language>en-us</language>
+		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+		<lastBuildDate>Sat, 01 Jan 2022 20:50:37 +0000</lastBuildDate>
+		<atom:link href="https://gafraser.github.io/gfraser/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Firstpost</title>
+			<link>https://gafraser.github.io/gfraser/posts/firstpost/</link>
+			<pubDate>Sat, 01 Jan 2022 20:50:37 +0000</pubDate>
+			
+			<guid>https://gafraser.github.io/gfraser/posts/firstpost/</guid>
+			<description>This is the first post on the website!!</description>
+			<content type="html"><![CDATA[<p>This is the first post on the website!!</p>
+]]></content>
+		</item>
+		
+	</channel>
+</rss>
