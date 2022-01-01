@@ -1,4 +1,4 @@
-baseURL = 'http://www.gfraser.co.uk/'
+baseURL = 'http://www.gafraser.github.io/gfraser/'
 languageCode = 'en-GB'
 title = 'Respond:Recover'
 theme = "ananke"
