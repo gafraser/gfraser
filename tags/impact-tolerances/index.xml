@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Impact Tolerances on Respond:Recover</title>
-    <link>https://gfraser.co.uk/tags/impact-tolerances/</link>
+    <link>/tags/impact-tolerances/</link>
     <description>Recent content in Impact Tolerances on Respond:Recover</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 24 Dec 2022 15:41:29 +0000</lastBuildDate><atom:link href="https://gfraser.co.uk/tags/impact-tolerances/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Dec 2022 15:41:29 +0000</lastBuildDate><atom:link href="/tags/impact-tolerances/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Impact_Tolerances</title>
-      <link>https://gfraser.co.uk/posts/impact_tolerances/</link>
+      <link>/posts/impact_tolerances/</link>
       <pubDate>Sat, 24 Dec 2022 15:41:29 +0000</pubDate>
       
-      <guid>https://gfraser.co.uk/posts/impact_tolerances/</guid>
+      <guid>/posts/impact_tolerances/</guid>
       <description>Impact Tolerances
 Impact tolerances vs MTPD</description>
     </item>

@@ -1,20 +1,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Posts on Respond:Recover</title>
-		<link>https://gfraser.co.uk/posts/</link>
+		<link>/posts/</link>
 		<description>Recent content in Posts on Respond:Recover</description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-gb</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
 		<lastBuildDate>Sat, 24 Dec 2022 15:41:29 +0000</lastBuildDate>
-		<atom:link href="https://gfraser.co.uk/posts/index.xml" rel="self" type="application/rss+xml" />
+		<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
 		
 		<item>
 			<title>Impact_Tolerances</title>
-			<link>https://gfraser.co.uk/posts/impact_tolerances/</link>
+			<link>/posts/impact_tolerances/</link>
 			<pubDate>Sat, 24 Dec 2022 15:41:29 +0000</pubDate>
 			
-			<guid>https://gfraser.co.uk/posts/impact_tolerances/</guid>
+			<guid>/posts/impact_tolerances/</guid>
 			<description>Impact Tolerances
 Impact tolerances vs MTPD</description>
 			<content type="html"><![CDATA[<p>Impact Tolerances</p>
@@ -24,10 +24,10 @@ Impact tolerances vs MTPD</description>
 		
 		<item>
 			<title>Cloud Disaster Recovery</title>
-			<link>https://gfraser.co.uk/posts/cloud-dr/</link>
+			<link>/posts/cloud-dr/</link>
 			<pubDate>Sat, 24 Dec 2022 15:31:55 +0000</pubDate>
 			
-			<guid>https://gfraser.co.uk/posts/cloud-dr/</guid>
+			<guid>/posts/cloud-dr/</guid>
 			<description>Disaster Recovery in the Cloud
 A guide for the selection of disaster recovery strategies when deploying applications in cloud environments.
 The availability and fast provisioning capabilities of external cloud providers has led to a desire to use these services for the development and hosting of applications.
@@ -110,10 +110,10 @@ Multi-Cloud</p>
 		
 		<item>
 			<title>UK Operational Resilience Regulations</title>
-			<link>https://gfraser.co.uk/posts/regulation/</link>
+			<link>/posts/regulation/</link>
 			<pubDate>Thu, 22 Dec 2022 12:39:37 +0000</pubDate>
 			
-			<guid>https://gfraser.co.uk/posts/regulation/</guid>
+			<guid>/posts/regulation/</guid>
 			<description>UK Banking Regulators publish final Operational Resilience Policy
 Having spent a fair chunk of my time over the last two years on both direct feedback on Operational Resilience and working collaboratively with peers on some of the implementation standards, it&amp;rsquo;s pleasing to see the influence that work has had on the final policies. Analysis to come later, but the links are here:
 Statement of Policy – Outlines where the Operational Resilience Policy sits within the context of Governance, Operational Risk, Business Continuity and Outsourcing policies.</description>
