@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Respond:Recover</title>
-    <link>https://gafraser.github.io/gfraser/</link>
+    <link>https://gfraser.co.uk/</link>
     <description>Recent content on Respond:Recover</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 24 Dec 2022 15:41:29 +0000</lastBuildDate><atom:link href="https://gafraser.github.io/gfraser/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Dec 2022 15:41:29 +0000</lastBuildDate><atom:link href="https://gfraser.co.uk/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Impact_Tolerances</title>
-      <link>https://gafraser.github.io/gfraser/posts/impact_tolerances/</link>
+      <link>https://gfraser.co.uk/posts/impact_tolerances/</link>
       <pubDate>Sat, 24 Dec 2022 15:41:29 +0000</pubDate>
       
-      <guid>https://gafraser.github.io/gfraser/posts/impact_tolerances/</guid>
+      <guid>https://gfraser.co.uk/posts/impact_tolerances/</guid>
       <description>##Impact Tolerances</description>
     </item>
     
     <item>
       <title>Cloud Disaster Recovery</title>
-      <link>https://gafraser.github.io/gfraser/posts/cloud-dr/</link>
+      <link>https://gfraser.co.uk/posts/cloud-dr/</link>
       <pubDate>Sat, 24 Dec 2022 15:31:55 +0000</pubDate>
       
-      <guid>https://gafraser.github.io/gfraser/posts/cloud-dr/</guid>
+      <guid>https://gfraser.co.uk/posts/cloud-dr/</guid>
       <description>Disaster Recovery in the Cloud
 A guide for the selection of disaster recovery strategies when deploying applications in cloud environments.
 The availability and fast provisioning capabilities of external cloud providers has led to a desire to use these services for the development and hosting of applications.
@@ -31,10 +31,10 @@ This paper outlines the acceptable practices for the utilisation of these enviro
     
     <item>
       <title>UK Operational Resilience Regulations</title>
-      <link>https://gafraser.github.io/gfraser/posts/regulation/</link>
+      <link>https://gfraser.co.uk/posts/regulation/</link>
       <pubDate>Thu, 22 Dec 2022 12:39:37 +0000</pubDate>
       
-      <guid>https://gafraser.github.io/gfraser/posts/regulation/</guid>
+      <guid>https://gfraser.co.uk/posts/regulation/</guid>
       <description>UK Banking Regulators publish final Operational Resilience Policy
 Having spent a fair chunk of my time over the last two years on both direct feedback on Operational Resilience and working collaboratively with peers on some of the implementation standards, it&amp;rsquo;s pleasing to see the influence that work has had on the final policies. Analysis to come later, but the links are here:
 Statement of Policy – Outlines where the Operational Resilience Policy sits within the context of Governance, Operational Risk, Business Continuity and Outsourcing policies.</description>
@@ -42,10 +42,10 @@ Statement of Policy – Outlines where the Operational Resilience Policy sits w
     
     <item>
       <title>About</title>
-      <link>https://gafraser.github.io/gfraser/about/</link>
+      <link>https://gfraser.co.uk/about/</link>
       <pubDate>Sat, 01 Jan 2022 21:02:45 +0000</pubDate>
       
-      <guid>https://gafraser.github.io/gfraser/about/</guid>
+      <guid>https://gfraser.co.uk/about/</guid>
       <description>My name is George Fraser, I currently work for a Global Systemically Important Financial Institution (G-SIFI) as an Operational Resilience Specialist.
 Since 2006 I’ve been working to improve resilience within the financial services sector, helping to ensure that large banks meet their moral and societal expectations in the provision of banking services.
 I’m currently interested in:
