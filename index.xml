@@ -7,7 +7,30 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 01 Jan 2022 20:50:37 +0000</lastBuildDate><atom:link href="https://gafraser.github.io/gfraser/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Dec 2022 15:31:55 +0000</lastBuildDate><atom:link href="https://gafraser.github.io/gfraser/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cloud Disaster Recovery</title>
+      <link>https://gafraser.github.io/gfraser/posts/cloud-dr/</link>
+      <pubDate>Sat, 24 Dec 2022 15:31:55 +0000</pubDate>
+      
+      <guid>https://gafraser.github.io/gfraser/posts/cloud-dr/</guid>
+      <description>Disaster Recovery in the Cloud
+A guide for the selection of disaster recovery strategies when deploying applications in cloud environments.
+The availability and fast provisioning capabilities of external cloud providers has led to a desire to use these services for the development and hosting of applications.
+This paper outlines the acceptable practices for the utilisation of these environments to retain policy compliance. It does not cover Security &amp;amp; Data protection requirements, nor does it cover low level strategies or solutions to meet Resilience requirements which will be expanded on in a later paper.</description>
+    </item>
+    
+    <item>
+      <title>UK Operational Resilience Regulations</title>
+      <link>https://gafraser.github.io/gfraser/posts/regulation/</link>
+      <pubDate>Thu, 22 Dec 2022 12:39:37 +0000</pubDate>
+      
+      <guid>https://gafraser.github.io/gfraser/posts/regulation/</guid>
+      <description>UK Banking Regulators publish final Operational Resilience Policy
+Having spent a fair chunk of my time over the last two years on both direct feedback on Operational Resilience and working collaboratively with peers on some of the implementation standards, it&amp;rsquo;s pleasing to see the influence that work has had on the final policies. Analysis to come later, but the links are here:
+Statement of Policy – Outlines where the Operational Resilience Policy sits within the context of Governance, Operational Risk, Business Continuity and Outsourcing policies.</description>
+    </item>
+    
     <item>
       <title>About</title>
       <link>https://gafraser.github.io/gfraser/about/</link>
@@ -18,15 +41,6 @@
 Since 2006 I’ve been working to improve resilience within the financial services sector, helping to ensure that large banks meet their moral and societal expectations in the provision of banking services.
 I’m currently interested in:
 Resilience issue casued sy systemic complexity Data vaulting and tertiary data copies. Chaos Engineering for identification of failures in production.</description>
-    </item>
-    
-    <item>
-      <title>Firstpost</title>
-      <link>https://gafraser.github.io/gfraser/posts/firstpost/</link>
-      <pubDate>Sat, 01 Jan 2022 20:50:37 +0000</pubDate>
-      
-      <guid>https://gafraser.github.io/gfraser/posts/firstpost/</guid>
-      <description>This is the first post on the website!!</description>
     </item>
     
   </channel>
