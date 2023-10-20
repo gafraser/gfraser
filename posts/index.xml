@@ -1,0 +1,129 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Posts on Respond:Recover</title>
+		<link>https://www.gfraser.co.uk/posts/</link>
+		<description>Recent content in Posts on Respond:Recover</description>
+		<generator>Hugo -- gohugo.io</generator>
+		<language>en-gb</language>
+		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+		<lastBuildDate>Sat, 24 Dec 2022 15:31:55 +0000</lastBuildDate>
+		<atom:link href="https://www.gfraser.co.uk/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Cloud Disaster Recovery</title>
+			<link>https://www.gfraser.co.uk/posts/cloud-dr/</link>
+			<pubDate>Sat, 24 Dec 2022 15:31:55 +0000</pubDate>
+			
+			<guid>https://www.gfraser.co.uk/posts/cloud-dr/</guid>
+			<description>Disaster Recovery in the Cloud
+A guide for the selection of disaster recovery strategies when deploying applications in cloud environments.
+The availability and fast provisioning capabilities of external cloud providers has led to a desire to use these services for the development and hosting of applications.
+This paper outlines the acceptable practices for the utilisation of these environments to retain policy compliance. It does not cover Security &amp;amp; Data protection requirements, nor does it cover low level strategies or solutions to meet Resilience requirements which will be expanded on in a later paper.</description>
+			<content type="html"><![CDATA[<p>Disaster Recovery in the Cloud</p>
+<p>A guide for the selection of disaster recovery strategies when deploying applications in cloud environments.</p>
+<p>The availability and fast provisioning capabilities of external cloud providers has led to a desire to use these services for the development and hosting of applications.</p>
+<p>This paper outlines the acceptable practices for the utilisation of these environments to retain policy compliance.  It does not cover Security &amp; Data protection requirements, nor does it cover low level strategies or solutions to meet Resilience requirements which will be expanded on in a later paper.</p>
+<p>Existing Disaster Recovery strategies are based on prevention of avoidable Incidents which may lead to loss of site (where possible) and recovery to a sufficiently independent site unaffected by the original impact within the business defined Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO).</p>
+<p>Currently this is achieved through a robust, detailed assessment of on-premises DC capability, with existing sites undergoing an annual review and risk assessment to determine sufficient independence of DC pairs in terms of Network, Power and Geographic resilience to natural disaster (fire, flood, earthquake etc.).</p>
+<p>When dealing with external sites owned by Cloud providers, we are limited in the types of assurance we can provide, as the detailed data currently used is not readily available, as such there is a slightly increased risk in this approach and therefore demonstrating compliance becomes harder.</p>
+<p>We will cover the 3 largest cloud providers AWS (Amazon), Azure (Microsoft) and GCP (Google) as this will demonstrate the high level principles applicable to any provider, but also demonstrate the variable approach that currently exists.
+DRaaS vs. Full Cloud Resilience</p>
+<p>Cloud providers enable correctly designed workloads to use Cloud infrastructure for DR as a Service, and also the reverse, where on-premise can be utilised as a DR environment for cloud hosted workloads.  These strategies are not covered in this paper as the assumption is that there would likely be limited opportunities for this approach and that DR for a system or application deployed in the cloud would be provided by a cloud solution.
+AWS</p>
+<p>AWS is by far the largest and best known cloud provider and has the longest history and largest feature set.  AWS approach to resilience is predicated by scale - the demand on their service has led to a different approach to that taken by those who own their own DCs.
+Availability Zones vs. Regions</p>
+<p>An Availability zone is &gt;= 1 DC, the reason for having more than 1 DC in an availability zone is primarily one of scale,<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> in that running a DC beyond a certain level of power and scale was less optimal than having another DC and loss of a DC would have a much greater impact.</p>
+<p>A Region consists of multiple Availability zones which are close in proximity and have fast networking connectivity. We would therefore consider this analogous to physically separated halls of an extremely large DC, allowing high availability protection of workloads if configured to run across multiple AZs.</p>
+<p>We would therefore class a region as a single site and therefore any controls relating to a site apply at a regional level for AWS.</p>
+<p><img src="../../Images/A4A8CAE5-F907-4068-BB87-1E92F4C1D503-1781-000002ED07ED0586.png" alt=""></p>
+<p>AWS provide a best practice guide for Disaster Recovery,<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> although this focuses more on the utilisation of AWS for DRaaS solutions for customers who do not operate their own paired sites.</p>
+<p>AWS regional failures are not uncommon,<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> despite AWS attempting to provide as much local isolation and resilience as possible.  AWS themselves operate with a 99.95% availability target<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> for EC2 in a region prior to any workload actually being deployed (S3 being 99.9%), therefore systems should be designed to reflect this availability figure.</p>
+<p>Therefore best practice deems that Disaster Recovery for systems or applications deployed on AWS must use either multi-region capability, or a combination of self-hosting and AWS (assuming the same rules about site separation apply).</p>
+<p>Azure</p>
+<p>Azure offers a slightly different model to AWS, but a model that is more aligned to traditional configurations.  Azure offers the concept of Regional pairing, where regions provide geographical isolation for Disaster Recovery, with each region being &gt; 300 miles apart. As with AWS, a region is equivalent to a site.  Microsoft provide a best practice guide to Business Continuity.<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
+<p><img src="../../Images/96B5EABF-726A-461E-B910-48558C772C6C-1781-000002D65892CC57.png" alt=""></p>
+<p>As with AWS, any Azure deployments should not rely on a single region to provide DR, and systems or applications must use the paired region capability or a combination of region + on-premises deployment where suitable.
+GCP</p>
+<p>Google DR guidance<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> aligns with best practice and the equivalents from AWS and Azure, in that zones provide High Availability, but Disaster Recovery must be provided through multi-region deployment and a suitable strategy to meet business RTO and RPO requirements.</p>
+<p>“To build disaster recovery capable applications that can withstand the extended loss of entire regions
+For data, use one or more of the following strategies:
+Use managed, multi-regional storage services such as Cloud Storage or Cloud Datastore.
+Use zonal or regional resources, but snapshot data to a multi-regional resource such as Cloud Storage or Cloud Datastore.
+Use zonal or regional resources, but manage your own data replication to one or more other regions.
+For compute, use the following strategy:
+Use zonal or regional resources, such as Compute Engine or App Engine, but manually or automatically bring up your application in another region (on regional failure) referring to copies of your primary data if the data is not already in a managed, multi-regional resource.”</p>
+<p>GCP refer to a Zone as a cluster within a DC and a Region as Data Centre Campus with multiple independent buildings.</p>
+<p><img src="../../Images/8DC3CEEE-5417-4302-96B5-78F0DA5203A9-1781-000002F28FD058B7.png" alt=""></p>
+<p>Summary</p>
+<p>All major cloud providers offer a similar approach to resilience and Disaster Recovery.  Local High-Availability requirements are provided by Availability Zones within a single region, this is equivalent to local clustering within a single DC, but with enhanced physical resilience. Disaster Recovery recommendations from the three largest Cloud vendors require systems to have a multi-region solution.</p>
+<p>Current policy requirements are written to ensure sufficient risk assessment is carried out to prevent an incident impacting both production and chosen partner site.  Due to the lack of information required to conduct detailed, equivalent site assessments for cloud provider infrastructure we have to assume that a Region offered by a cloud provider is the equivalent of a site as covered by our policy and therefore compliance must be demonstrated at this level when considering isolation. Existing Mandatory Procedures indicate that Resilience &amp; Continuity are engaged to approve site selections.</p>
+<p>Multi-region solutions imply additional complexity due to Networking and latency issues, but must be chosen for critical services, unless using a combination and local hosting to provide capabilities. Chosen solutions must demonstrate how they will achieve the Recovery Time and Recovery Point Objectives specified by the service owner.</p>
+<p>Additional guidance on resilience, and DR patterns for cloud deployments will be provided in a future paper.</p>
+<p>Patterns of Cloud Resilience</p>
+<p>Pilot light
+Availability vs. Disaster
+Multi-Cloud</p>
+<p>Traditional vs. Rebuild</p>
+<p>Cloud Resilience Principles</p>
+<p>Recreatability</p>
+<p>Horizontal Scaling</p>
+<p>Stateless Services</p>
+<p>Immutable deployments - no changes possible to prod systems, changes have to be made, tested and deployed.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>AWS Innovation at Scale: <a href="https://youtu.be/JIQETrFC_SQ">https://youtu.be/JIQETrFC_SQ</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>AWS DR guidelines: <a href="https://d0.awsstatic.com/whitepapers/aws-disaster-recovery.pdf">https://d0.awsstatic.com/whitepapers/aws-disaster-recovery.pdf</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>AWS S3 outage: <a href="https://www.theregister.co.uk/2017/03/01/s3_outage_exposes_amazonian_internet_bottleneck/">https://www.theregister.co.uk/2017/03/01/s3_outage_exposes_amazonian_internet_bottleneck/</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>AWS EC2 SLA: <a href="https://aws.amazon.com/ec2/sla/">https://aws.amazon.com/ec2/sla/</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p>Azure BC best practice guide : <a href="https://docs.microsoft.com/en-us/azure/best-practices-availability-paired-regions">https://docs.microsoft.com/en-us/azure/best-practices-availability-paired-regions</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p>Google DR guidance: <a href="https://cloud.google.com/solutions/disaster-recovery-cookbook">https://cloud.google.com/solutions/disaster-recovery-cookbook</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+]]></content>
+		</item>
+		
+		<item>
+			<title>UK Operational Resilience Regulations</title>
+			<link>https://www.gfraser.co.uk/posts/regulation/</link>
+			<pubDate>Thu, 22 Dec 2022 12:39:37 +0000</pubDate>
+			
+			<guid>https://www.gfraser.co.uk/posts/regulation/</guid>
+			<description>UK Banking Regulators publish final Operational Resilience Policy
+Having spent a fair chunk of my time over the last two years on both direct feedback on Operational Resilience and working collaboratively with peers on some of the implementation standards, it&amp;rsquo;s pleasing to see the influence that work has had on the final policies. Analysis to come later, but the links are here:
+Statement of Policy – Outlines where the Operational Resilience Policy sits within the context of Governance, Operational Risk, Business Continuity and Outsourcing policies.</description>
+			<content type="html"><![CDATA[<p><a href="https://www.gfraser.co.uk/2021/03/29/uk-banking-regulators-publish-final-operational-resilience-policy/">UK Banking Regulators publish final Operational Resilience Policy</a></p>
+<p>Having spent a fair chunk of my time over the last two years on both direct feedback on Operational Resilience and working collaboratively with peers on some of the implementation standards, it&rsquo;s pleasing to see the influence that work has had on the final policies. Analysis to come later, but the links are here:</p>
+<p><a href="https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/statement-of-policy/2021/operational-resilience-march-2021.pdf">Statement of Policy</a> – Outlines where the Operational Resilience Policy sits within the context of Governance, Operational Risk, Business Continuity and Outsourcing policies.</p>
+<p><a href="https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/publication/2021/building-operational-resilience-impact-tolerances-for-important-business-services.pdf">Overview of Consultation Responses</a> – Provides key summaries of how the respondents feedback has led to material change within the final policy statements.</p>
+<p><a href="https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/policy-statement/2021/march/ps621.pdf">The PRA Operational Resilience Policy Statement PS6/21</a> – The actual PRA Operational Resilience Policy Statement with examples.</p>
+<p><a href="https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/policy-statement/2021/march/ps621app1.pdf">PRA Rulebook Amendments</a> – The actual amended rulebook text.</p>
+<p><a href="https://www.fca.org.uk/publication/policy/ps21-3-operational-resilience.pdf">FCA Operational Resilience Policy PS 21/3</a> – The equivalent FCA Operational Resilience Policy statement.</p>
+<p><a href="https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/consultation-paper/2021/march/ps721.pdf">The PRA Outsourcing and Third Party risk management Policy Statement PS7/21</a> – The PRA Outsourcing and Third Party risk management Policy Statement, incorporating the consultation paper responses.</p>
+<p><a href="https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/supervisory-statement/2021/ss221-march-21.pdf">The PRA Outsourcing and Third Party risk management Supervisory Statement SS2/21</a> – The PRA supervisory statements for Outsourcing and Third Party Risk Management with specific examples for Cloud Outsourcing.</p>
+<p>Thats a lot of reading, but at first glance there has been minimal change and some minor clarifications and amendments. Also included is some timelines, with the expectation of a 12 month implementation window, followed by 36 months to address any issues.</p>
+<p>In addition to these papers, there was the simultaneous release by the Bank of England of the specific requirements for Central Counterparties, Central Securities Depositories, and Recognised Payment Systems Operators.</p>
+<p>These can be found here:</p>
+<p><a href="https://www.bankofengland.co.uk/-/media/boe/files/paper/2021/operational-resilience-central-counterparties-ps.pdf">Central Counterparties Policy Statement</a></p>
+<p><a href="https://www.bankofengland.co.uk/-/media/boe/files/paper/2021/operational-resilience-central-counterparties-ss.pdf">Central Counterparties Supervisory Statement</a></p>
+<p><a href="https://www.bankofengland.co.uk/-/media/boe/files/paper/2021/operational-resilience-central-securities-depositories-ps.pdf">Central Securities Depositories Policy Statement</a></p>
+<p><a href="https://www.bankofengland.co.uk/-/media/boe/files/paper/2021/operational-resilience-central-securities-depositories-ss.pdf">Central Securities Depositories Supervisory Statement</a></p>
+<p><a href="https://www.bankofengland.co.uk/-/media/boe/files/paper/2021/operational-resilience-recognised-payment-system-operators-and-specified-service-providers-ps.pdf">Recognised payment system operators and specified service providers Policy Statement</a></p>
+<p><a href="https://www.bankofengland.co.uk/-/media/boe/files/paper/2021/operational-resilience-recognised-payment-system-operators-and-specified-service-providers-ss.pdf">Recognised payment system operators and specified service providers Supervisory Statement</a></p>
+]]></content>
+		</item>
+		
+	</channel>
+</rss>

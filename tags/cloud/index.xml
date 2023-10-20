@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud on Respond:Recover</title>
+    <link>https://www.gfraser.co.uk/tags/cloud/</link>
+    <description>Recent content in Cloud on Respond:Recover</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Sat, 24 Dec 2022 15:31:55 +0000</lastBuildDate><atom:link href="https://www.gfraser.co.uk/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cloud Disaster Recovery</title>
+      <link>https://www.gfraser.co.uk/posts/cloud-dr/</link>
+      <pubDate>Sat, 24 Dec 2022 15:31:55 +0000</pubDate>
+      
+      <guid>https://www.gfraser.co.uk/posts/cloud-dr/</guid>
+      <description>Disaster Recovery in the Cloud
+A guide for the selection of disaster recovery strategies when deploying applications in cloud environments.
+The availability and fast provisioning capabilities of external cloud providers has led to a desire to use these services for the development and hosting of applications.
+This paper outlines the acceptable practices for the utilisation of these environments to retain policy compliance. It does not cover Security &amp;amp; Data protection requirements, nor does it cover low level strategies or solutions to meet Resilience requirements which will be expanded on in a later paper.</description>
+    </item>
+    
+  </channel>
+</rss>
