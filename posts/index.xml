@@ -1,9 +1,69 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Respond:Recover</title><link>https://www.gfraser.co.uk/posts/</link><description>Recent content in Posts on Respond:Recover</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Fri, 20 Oct 2023 18:34:42 +0100</lastBuildDate><atom:link href="https://www.gfraser.co.uk/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Principles For Data Recovery</title><link>https://www.gfraser.co.uk/posts/principles_for_data_recovery/</link><pubDate>Fri, 20 Oct 2023 18:34:42 +0100</pubDate><guid>https://www.gfraser.co.uk/posts/principles_for_data_recovery/</guid><description>Data Recovery is a complex topic to manage.
-Recovery Point Objectives are defined by business teams.
-Not all organisations are convinced that there is a reasonable need to mitigate complex data issues post an extreme disruption such as a cyber attack, this can be evidenced in the following paper created as a joint exercise between SIFMA and Protiviti:
-Protiviti https://www.protiviti.com/gl-en/insights-paper/principles-for-data-recovery-severe-cyber-scenario</description></item><item><title>Cloud Disaster Recovery</title><link>https://www.gfraser.co.uk/posts/cloud-dr/</link><pubDate>Sat, 24 Dec 2022 15:31:55 +0000</pubDate><guid>https://www.gfraser.co.uk/posts/cloud-dr/</guid><description>Disaster Recovery in the Cloud
-A guide for the selection of disaster recovery strategies when deploying applications in cloud environments.
-The availability and fast provisioning capabilities of external cloud providers has led to a desire to use these services for the development and hosting of applications.
-This paper outlines the acceptable practices for the utilisation of these environments to retain policy compliance. It does not cover Security &amp;amp; Data protection requirements, nor does it cover low level strategies or solutions to meet Resilience requirements which will be expanded on in a later paper.</description></item><item><title>UK Operational Resilience Regulations</title><link>https://www.gfraser.co.uk/posts/regulation/</link><pubDate>Thu, 22 Dec 2022 12:39:37 +0000</pubDate><guid>https://www.gfraser.co.uk/posts/regulation/</guid><description>UK Banking Regulators publish final Operational Resilience Policy
-Having spent a fair chunk of my time over the last two years on both direct feedback on Operational Resilience and working collaboratively with peers on some of the implementation standards, it&amp;rsquo;s pleasing to see the influence that work has had on the final policies. Analysis to come later, but the links are here:
-Statement of Policy – Outlines where the Operational Resilience Policy sits within the context of Governance, Operational Risk, Business Continuity and Outsourcing policies.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Respond:Recover</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on Respond:Recover</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Tue, 31 Oct 2023 20:44:01 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Principles For Data Recovery</title>
+      <link>http://localhost:1313/posts/principles_for_data_recovery/</link>
+      <pubDate>Fri, 20 Oct 2023 18:34:42 +0100</pubDate>
+      
+      <guid>http://localhost:1313/posts/principles_for_data_recovery/</guid>
+      
+      <description>&lt;p&gt;Data Recovery is a complex topic to manage.&lt;/p&gt;
+&lt;p&gt;Recovery Point Objectives are defined by business teams.&lt;/p&gt;
+&lt;p&gt;Not all organisations are convinced that there is a reasonable need to mitigate complex data issues post an extreme disruption such as a cyber attack, this can be evidenced in the following paper created as a joint exercise between SIFMA and Protiviti:&lt;/p&gt;
+&lt;p&gt;Protiviti &lt;a href=&#34;https://www.protiviti.com/gl-en/insights-paper/principles-for-data-recovery-severe-cyber-scenario&#34;&gt;https://www.protiviti.com/gl-en/insights-paper/principles-for-data-recovery-severe-cyber-scenario&lt;/a&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sequenceDiagram
+    participant User
+    participant IT
+    participant Security
+    participant Backup
+    participant Service
+    User-&amp;gt;&amp;gt;IT: Reports ransomware attack
+    IT-&amp;gt;&amp;gt;Security: Confirms ransomware infection
+    Security-&amp;gt;&amp;gt;IT: Performs forensics analysis
+    IT-&amp;gt;&amp;gt;Backup: Restores data from backup
+    Backup-&amp;gt;&amp;gt;IT: Confirms data restoration
+    IT-&amp;gt;&amp;gt;Service: Restarts service
+    Service-&amp;gt;&amp;gt;IT: Confirms service availability
+    IT-&amp;gt;&amp;gt;Security: Validates service integrity
+    Security-&amp;gt;&amp;gt;IT: Confirms service validation
+    IT-&amp;gt;&amp;gt;User: Informs user of service recovery
+&lt;/code&gt;&lt;/pre&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Cloud Disaster Recovery</title>
+      <link>http://localhost:1313/posts/cloud-dr/</link>
+      <pubDate>Sat, 24 Dec 2022 15:31:55 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/cloud-dr/</guid>
+      
+      <description>&lt;p&gt;Disaster Recovery in the Cloud&lt;/p&gt;
+&lt;p&gt;A guide for the selection of disaster recovery strategies when deploying applications in cloud environments.&lt;/p&gt;
+&lt;p&gt;The availability and fast provisioning capabilities of external cloud providers has led to a desire to use these services for the development and hosting of applications.&lt;/p&gt;
+&lt;p&gt;This paper outlines the acceptable practices for the utilisation of these environments to retain policy compliance.  It does not cover Security &amp;amp; Data protection requirements, nor does it cover low level strategies or solutions to meet Resilience requirements which will be expanded on in a later paper.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>UK Operational Resilience Regulations</title>
+      <link>http://localhost:1313/posts/regulation/</link>
+      <pubDate>Thu, 22 Dec 2022 12:39:37 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/regulation/</guid>
+      
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.gfraser.co.uk/2021/03/29/uk-banking-regulators-publish-final-operational-resilience-policy/&#34;&gt;UK Banking Regulators publish final Operational Resilience Policy&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Having spent a fair chunk of my time over the last two years on both direct feedback on Operational Resilience and working collaboratively with peers on some of the implementation standards, it&amp;rsquo;s pleasing to see the influence that work has had on the final policies. Analysis to come later, but the links are here:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/statement-of-policy/2021/operational-resilience-march-2021.pdf&#34;&gt;Statement of Policy&lt;/a&gt; – Outlines where the Operational Resilience Policy sits within the context of Governance, Operational Risk, Business Continuity and Outsourcing policies.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

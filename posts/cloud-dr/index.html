@@ -1,16 +1,371 @@
-<!doctype html><html lang=en-gb><head><meta charset=utf-8><meta http-equiv=content-type content="text/html"><meta name=viewport content="width=device-width,initial-scale=1"><title itemprop=name>Cloud Disaster Recovery | Respond:Recover</title><meta property="og:title" content="Cloud Disaster Recovery | Respond:Recover"><meta name=twitter:title content="Cloud Disaster Recovery | Respond:Recover"><meta itemprop=name content="Cloud Disaster Recovery | Respond:Recover"><meta name=application-name content="Cloud Disaster Recovery | Respond:Recover"><meta property="og:site_name" content="Respond:Recover"><meta name=description content="Blog about Operational Resilience"><meta itemprop=description content="Blog about Operational Resilience"><meta property="og:description" content="Blog about Operational Resilience"><meta name=twitter:description content="Blog about Operational Resilience"><meta property="og:locale" content="en-gb"><meta name=language content="en-gb"><meta itemprop=image content="https://www.gfraser.co.uk/"><meta property="og:image" content="https://www.gfraser.co.uk/"><meta name=twitter:image content="https://www.gfraser.co.uk/"><meta name=twitter:image:src content="https://www.gfraser.co.uk/"><meta property="og:type" content="article"><meta property="og:article:published_time" content="2022-12-24T15:31:55Z"><meta property="article:published_time" content="2022-12-24T15:31:55Z"><script defer type=application/ld+json>{"@context":"http://schema.org","@type":"Article","headline":"Cloud Disaster Recovery","author":{"@type":"Person","name":""},"datePublished":"2022-12-24","description":"","wordCount":1202,"mainEntityOfPage":"True","dateModified":"2022-12-24","image":{"@type":"imageObject","url":""},"publisher":{"@type":"Organization","name":"Respond:Recover"}}</script><meta name=generator content="Hugo 0.119.0"><link rel=canonical href=https://www.gfraser.co.uk/posts/cloud-dr/><link href=/style.min.9bd04d0fad85388343088ec85e9afd787ea003e72914d7f57df39c17ab2e7173.css rel=stylesheet><link href=/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css rel=stylesheet><link rel=apple-touch-icon sizes=180x180 href=/icons/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/icons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/icons/favicon-16x16.png><link rel=mask-icon href=/icons/safari-pinned-tab.svg><link rel="shortcut icon" href=/favicon.ico><link rel=manifest href=https://www.gfraser.co.uk/site.webmanifest><meta name=msapplication-config content="/browserconfig.xml"><meta name=msapplication-TileColor content="#2d89ef"><meta name=theme-color content="#434648"><link rel=icon type=image/svg+xml href=/icons/favicon.svg><script async src="https://www.googletagmanager.com/gtag/js?id=G-R6BLB4GJQJ"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-R6BLB4GJQJ",{anonymize_ip:!1})}</script></head><body data-theme=auto class=notransition><script src=/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script><div class=navbar role=navigation><nav class=menu aria-label="Main Navigation"><a href=https://www.gfraser.co.uk/ class=logo><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><title>Home</title><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></a><input type=checkbox id=menu-trigger class=menu-trigger>
-<label for=menu-trigger><span class=menu-icon><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentcolor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7H3.40726"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M.5 12.5V1.5c0-.552285.447715-1 1-1h11C13.0523.5 13.5.947715 13.5 1.5v11C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C.947715 13.5.5 13.0523.5 12.5z"/></svg></span></label><div class=trigger><ul class=trigger-container><li><a class=menu-link href=/>Home</a></li><li><a class="menu-link active" href=/posts/>Posts</a></li><li><a class=menu-link href=/pages/about/>About</a></li><li class=menu-separator><span>|</span></li></ul><a id=mode href=#><svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg><svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg></a></div></nav></div><div class="wrapper post"><main class=page-content aria-label=Content><article><header class=header><h1 class=header-title>Cloud Disaster Recovery</h1><div class=post-meta><time datetime=2022-12-24T15:31:55+00:00 itemprop=datePublished>24 Dec 2022</time></div></header><div class=page-content><p>Disaster Recovery in the Cloud</p><p>A guide for the selection of disaster recovery strategies when deploying applications in cloud environments.</p><p>The availability and fast provisioning capabilities of external cloud providers has led to a desire to use these services for the development and hosting of applications.</p><p>This paper outlines the acceptable practices for the utilisation of these environments to retain policy compliance. It does not cover Security & Data protection requirements, nor does it cover low level strategies or solutions to meet Resilience requirements which will be expanded on in a later paper.</p><p>Existing Disaster Recovery strategies are based on prevention of avoidable Incidents which may lead to loss of site (where possible) and recovery to a sufficiently independent site unaffected by the original impact within the business defined Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO).</p><p>Currently this is achieved through a robust, detailed assessment of on-premises DC capability, with existing sites undergoing an annual review and risk assessment to determine sufficient independence of DC pairs in terms of Network, Power and Geographic resilience to natural disaster (fire, flood, earthquake etc.).</p><p>When dealing with external sites owned by Cloud providers, we are limited in the types of assurance we can provide, as the detailed data currently used is not readily available, as such there is a slightly increased risk in this approach and therefore demonstrating compliance becomes harder.</p><p>We will cover the 3 largest cloud providers AWS (Amazon), Azure (Microsoft) and GCP (Google) as this will demonstrate the high level principles applicable to any provider, but also demonstrate the variable approach that currently exists.
-DRaaS vs. Full Cloud Resilience</p><p>Cloud providers enable correctly designed workloads to use Cloud infrastructure for DR as a Service, and also the reverse, where on-premise can be utilised as a DR environment for cloud hosted workloads. These strategies are not covered in this paper as the assumption is that there would likely be limited opportunities for this approach and that DR for a system or application deployed in the cloud would be provided by a cloud solution.
-AWS</p><p>AWS is by far the largest and best known cloud provider and has the longest history and largest feature set. AWS approach to resilience is predicated by scale - the demand on their service has led to a different approach to that taken by those who own their own DCs.
-Availability Zones vs. Regions</p><p>An Availability zone is >= 1 DC, the reason for having more than 1 DC in an availability zone is primarily one of scale,<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup> in that running a DC beyond a certain level of power and scale was less optimal than having another DC and loss of a DC would have a much greater impact.</p><p>A Region consists of multiple Availability zones which are close in proximity and have fast networking connectivity. We would therefore consider this analogous to physically separated halls of an extremely large DC, allowing high availability protection of workloads if configured to run across multiple AZs.</p><p>We would therefore class a region as a single site and therefore any controls relating to a site apply at a regional level for AWS.</p><p><img src=../../Images/A4A8CAE5-F907-4068-BB87-1E92F4C1D503-1781-000002ED07ED0586.png alt></p><p>AWS provide a best practice guide for Disaster Recovery,<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup> although this focuses more on the utilisation of AWS for DRaaS solutions for customers who do not operate their own paired sites.</p><p>AWS regional failures are not uncommon,<sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup> despite AWS attempting to provide as much local isolation and resilience as possible. AWS themselves operate with a 99.95% availability target<sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup> for EC2 in a region prior to any workload actually being deployed (S3 being 99.9%), therefore systems should be designed to reflect this availability figure.</p><p>Therefore best practice deems that Disaster Recovery for systems or applications deployed on AWS must use either multi-region capability, or a combination of self-hosting and AWS (assuming the same rules about site separation apply).</p><p>Azure</p><p>Azure offers a slightly different model to AWS, but a model that is more aligned to traditional configurations. Azure offers the concept of Regional pairing, where regions provide geographical isolation for Disaster Recovery, with each region being > 300 miles apart. As with AWS, a region is equivalent to a site. Microsoft provide a best practice guide to Business Continuity.<sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup></p><p><img src=../../Images/96B5EABF-726A-461E-B910-48558C772C6C-1781-000002D65892CC57.png alt></p><p>As with AWS, any Azure deployments should not rely on a single region to provide DR, and systems or applications must use the paired region capability or a combination of region + on-premises deployment where suitable.
-GCP</p><p>Google DR guidance<sup id=fnref:6><a href=#fn:6 class=footnote-ref role=doc-noteref>6</a></sup> aligns with best practice and the equivalents from AWS and Azure, in that zones provide High Availability, but Disaster Recovery must be provided through multi-region deployment and a suitable strategy to meet business RTO and RPO requirements.</p><p>“To build disaster recovery capable applications that can withstand the extended loss of entire regions
+<!DOCTYPE html>
+<html lang="en-gb"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Cloud Disaster Recovery | Respond:Recover</title>
+<meta property="og:title" content="Cloud Disaster Recovery | Respond:Recover" />
+<meta name="twitter:title" content="Cloud Disaster Recovery | Respond:Recover" />
+<meta itemprop="name" content="Cloud Disaster Recovery | Respond:Recover" />
+<meta name="application-name" content="Cloud Disaster Recovery | Respond:Recover" />
+<meta property="og:site_name" content="Respond:Recover" />
+
+<meta name="description" content="Posts about Operational Resilience">
+<meta itemprop="description" content="Posts about Operational Resilience" />
+<meta property="og:description" content="Posts about Operational Resilience" />
+<meta name="twitter:description" content="Posts about Operational Resilience" />
+
+<meta property="og:locale" content="en-gb" />
+<meta name="language" content="en-gb" />
+
+  <link rel="alternate" hreflang="en-gb" href="http://localhost:1313/posts/cloud-dr/" title="English" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2022-12-24T15:31:55Z />
+    <meta property="article:published_time" content=2022-12-24T15:31:55Z />
+    <meta property="og:url" content="http://localhost:1313/posts/cloud-dr/" />
+
+    
+    <meta property="og:article:author" content="George Fraser" />
+    <meta property="article:author" content="George Fraser" />
+    <meta name="author" content="George Fraser" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Cloud Disaster Recovery",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2022-12-24",
+        "description": "",
+        "wordCount":  1202 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2022-12-24",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Respond:Recover"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.140.2">
+
+    
+    <meta property="og:url" content="http://localhost:1313/posts/cloud-dr/">
+  <meta property="og:site_name" content="Respond:Recover">
+  <meta property="og:title" content="Cloud Disaster Recovery">
+  <meta property="og:description" content="Disaster Recovery in the Cloud
+A guide for the selection of disaster recovery strategies when deploying applications in cloud environments.
+The availability and fast provisioning capabilities of external cloud providers has led to a desire to use these services for the development and hosting of applications.
+This paper outlines the acceptable practices for the utilisation of these environments to retain policy compliance. It does not cover Security &amp; Data protection requirements, nor does it cover low level strategies or solutions to meet Resilience requirements which will be expanded on in a later paper.">
+  <meta property="og:locale" content="en_gb">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-12-24T15:31:55+00:00">
+    <meta property="article:modified_time" content="2022-12-24T15:31:55+00:00">
+    <meta property="article:tag" content="Cloud">
+    <meta property="article:tag" content="DR">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Cloud Disaster Recovery">
+  <meta name="twitter:description" content="Disaster Recovery in the Cloud
+A guide for the selection of disaster recovery strategies when deploying applications in cloud environments.
+The availability and fast provisioning capabilities of external cloud providers has led to a desire to use these services for the development and hosting of applications.
+This paper outlines the acceptable practices for the utilisation of these environments to retain policy compliance. It does not cover Security &amp; Data protection requirements, nor does it cover low level strategies or solutions to meet Resilience requirements which will be expanded on in a later paper.">
+
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/posts/cloud-dr/">
+    <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+</head>
+<body data-theme = "auto" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/pages/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Cloud Disaster Recovery</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2022-12-24T15:31:55&#43;00:00" itemprop="datePublished"> 24 Dec 2022 </time>
+                </div>
+                
+            </header>
+            
+            <div class="page-content">
+                <p>Disaster Recovery in the Cloud</p>
+<p>A guide for the selection of disaster recovery strategies when deploying applications in cloud environments.</p>
+<p>The availability and fast provisioning capabilities of external cloud providers has led to a desire to use these services for the development and hosting of applications.</p>
+<p>This paper outlines the acceptable practices for the utilisation of these environments to retain policy compliance.  It does not cover Security &amp; Data protection requirements, nor does it cover low level strategies or solutions to meet Resilience requirements which will be expanded on in a later paper.</p>
+<p>Existing Disaster Recovery strategies are based on prevention of avoidable Incidents which may lead to loss of site (where possible) and recovery to a sufficiently independent site unaffected by the original impact within the business defined Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO).</p>
+<p>Currently this is achieved through a robust, detailed assessment of on-premises DC capability, with existing sites undergoing an annual review and risk assessment to determine sufficient independence of DC pairs in terms of Network, Power and Geographic resilience to natural disaster (fire, flood, earthquake etc.).</p>
+<p>When dealing with external sites owned by Cloud providers, we are limited in the types of assurance we can provide, as the detailed data currently used is not readily available, as such there is a slightly increased risk in this approach and therefore demonstrating compliance becomes harder.</p>
+<p>We will cover the 3 largest cloud providers AWS (Amazon), Azure (Microsoft) and GCP (Google) as this will demonstrate the high level principles applicable to any provider, but also demonstrate the variable approach that currently exists.
+DRaaS vs. Full Cloud Resilience</p>
+<p>Cloud providers enable correctly designed workloads to use Cloud infrastructure for DR as a Service, and also the reverse, where on-premise can be utilised as a DR environment for cloud hosted workloads.  These strategies are not covered in this paper as the assumption is that there would likely be limited opportunities for this approach and that DR for a system or application deployed in the cloud would be provided by a cloud solution.
+AWS</p>
+<p>AWS is by far the largest and best known cloud provider and has the longest history and largest feature set.  AWS approach to resilience is predicated by scale - the demand on their service has led to a different approach to that taken by those who own their own DCs.
+Availability Zones vs. Regions</p>
+<p>An Availability zone is &gt;= 1 DC, the reason for having more than 1 DC in an availability zone is primarily one of scale,<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> in that running a DC beyond a certain level of power and scale was less optimal than having another DC and loss of a DC would have a much greater impact.</p>
+<p>A Region consists of multiple Availability zones which are close in proximity and have fast networking connectivity. We would therefore consider this analogous to physically separated halls of an extremely large DC, allowing high availability protection of workloads if configured to run across multiple AZs.</p>
+<p>We would therefore class a region as a single site and therefore any controls relating to a site apply at a regional level for AWS.</p>
+<p><img src="../../Images/A4A8CAE5-F907-4068-BB87-1E92F4C1D503-1781-000002ED07ED0586.png" alt=""></p>
+<p>AWS provide a best practice guide for Disaster Recovery,<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> although this focuses more on the utilisation of AWS for DRaaS solutions for customers who do not operate their own paired sites.</p>
+<p>AWS regional failures are not uncommon,<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> despite AWS attempting to provide as much local isolation and resilience as possible.  AWS themselves operate with a 99.95% availability target<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> for EC2 in a region prior to any workload actually being deployed (S3 being 99.9%), therefore systems should be designed to reflect this availability figure.</p>
+<p>Therefore best practice deems that Disaster Recovery for systems or applications deployed on AWS must use either multi-region capability, or a combination of self-hosting and AWS (assuming the same rules about site separation apply).</p>
+<p>Azure</p>
+<p>Azure offers a slightly different model to AWS, but a model that is more aligned to traditional configurations.  Azure offers the concept of Regional pairing, where regions provide geographical isolation for Disaster Recovery, with each region being &gt; 300 miles apart. As with AWS, a region is equivalent to a site.  Microsoft provide a best practice guide to Business Continuity.<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
+<p><img src="../../Images/96B5EABF-726A-461E-B910-48558C772C6C-1781-000002D65892CC57.png" alt=""></p>
+<p>As with AWS, any Azure deployments should not rely on a single region to provide DR, and systems or applications must use the paired region capability or a combination of region + on-premises deployment where suitable.
+GCP</p>
+<p>Google DR guidance<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> aligns with best practice and the equivalents from AWS and Azure, in that zones provide High Availability, but Disaster Recovery must be provided through multi-region deployment and a suitable strategy to meet business RTO and RPO requirements.</p>
+<p>“To build disaster recovery capable applications that can withstand the extended loss of entire regions
 For data, use one or more of the following strategies:
 Use managed, multi-regional storage services such as Cloud Storage or Cloud Datastore.
 Use zonal or regional resources, but snapshot data to a multi-regional resource such as Cloud Storage or Cloud Datastore.
 Use zonal or regional resources, but manage your own data replication to one or more other regions.
 For compute, use the following strategy:
-Use zonal or regional resources, such as Compute Engine or App Engine, but manually or automatically bring up your application in another region (on regional failure) referring to copies of your primary data if the data is not already in a managed, multi-regional resource.”</p><p>GCP refer to a Zone as a cluster within a DC and a Region as Data Centre Campus with multiple independent buildings.</p><p><img src=../../Images/8DC3CEEE-5417-4302-96B5-78F0DA5203A9-1781-000002F28FD058B7.png alt></p><p>Summary</p><p>All major cloud providers offer a similar approach to resilience and Disaster Recovery. Local High-Availability requirements are provided by Availability Zones within a single region, this is equivalent to local clustering within a single DC, but with enhanced physical resilience. Disaster Recovery recommendations from the three largest Cloud vendors require systems to have a multi-region solution.</p><p>Current policy requirements are written to ensure sufficient risk assessment is carried out to prevent an incident impacting both production and chosen partner site. Due to the lack of information required to conduct detailed, equivalent site assessments for cloud provider infrastructure we have to assume that a Region offered by a cloud provider is the equivalent of a site as covered by our policy and therefore compliance must be demonstrated at this level when considering isolation. Existing Mandatory Procedures indicate that Resilience & Continuity are engaged to approve site selections.</p><p>Multi-region solutions imply additional complexity due to Networking and latency issues, but must be chosen for critical services, unless using a combination and local hosting to provide capabilities. Chosen solutions must demonstrate how they will achieve the Recovery Time and Recovery Point Objectives specified by the service owner.</p><p>Additional guidance on resilience, and DR patterns for cloud deployments will be provided in a future paper.</p><p>Patterns of Cloud Resilience</p><p>Pilot light
+Use zonal or regional resources, such as Compute Engine or App Engine, but manually or automatically bring up your application in another region (on regional failure) referring to copies of your primary data if the data is not already in a managed, multi-regional resource.”</p>
+<p>GCP refer to a Zone as a cluster within a DC and a Region as Data Centre Campus with multiple independent buildings.</p>
+<p><img src="../../Images/8DC3CEEE-5417-4302-96B5-78F0DA5203A9-1781-000002F28FD058B7.png" alt=""></p>
+<p>Summary</p>
+<p>All major cloud providers offer a similar approach to resilience and Disaster Recovery.  Local High-Availability requirements are provided by Availability Zones within a single region, this is equivalent to local clustering within a single DC, but with enhanced physical resilience. Disaster Recovery recommendations from the three largest Cloud vendors require systems to have a multi-region solution.</p>
+<p>Current policy requirements are written to ensure sufficient risk assessment is carried out to prevent an incident impacting both production and chosen partner site.  Due to the lack of information required to conduct detailed, equivalent site assessments for cloud provider infrastructure we have to assume that a Region offered by a cloud provider is the equivalent of a site as covered by our policy and therefore compliance must be demonstrated at this level when considering isolation. Existing Mandatory Procedures indicate that Resilience &amp; Continuity are engaged to approve site selections.</p>
+<p>Multi-region solutions imply additional complexity due to Networking and latency issues, but must be chosen for critical services, unless using a combination and local hosting to provide capabilities. Chosen solutions must demonstrate how they will achieve the Recovery Time and Recovery Point Objectives specified by the service owner.</p>
+<p>Additional guidance on resilience, and DR patterns for cloud deployments will be provided in a future paper.</p>
+<p>Patterns of Cloud Resilience</p>
+<p>Pilot light
 Availability vs. Disaster
-Multi-Cloud</p><p>Traditional vs. Rebuild</p><p>Cloud Resilience Principles</p><p>Recreatability</p><p>Horizontal Scaling</p><p>Stateless Services</p><p>Immutable deployments - no changes possible to prod systems, changes have to be made, tested and deployed.</p><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>AWS Innovation at Scale: <a href=https://youtu.be/JIQETrFC_SQ>https://youtu.be/JIQETrFC_SQ</a>&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p>AWS DR guidelines: <a href=https://d0.awsstatic.com/whitepapers/aws-disaster-recovery.pdf>https://d0.awsstatic.com/whitepapers/aws-disaster-recovery.pdf</a>&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:3><p>AWS S3 outage: <a href=https://www.theregister.co.uk/2017/03/01/s3_outage_exposes_amazonian_internet_bottleneck/>https://www.theregister.co.uk/2017/03/01/s3_outage_exposes_amazonian_internet_bottleneck/</a>&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:4><p>AWS EC2 SLA: <a href=https://aws.amazon.com/ec2/sla/>https://aws.amazon.com/ec2/sla/</a>&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:5><p>Azure BC best practice guide : <a href=https://docs.microsoft.com/en-us/azure/best-practices-availability-paired-regions>https://docs.microsoft.com/en-us/azure/best-practices-availability-paired-regions</a>&#160;<a href=#fnref:5 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:6><p>Google DR guidance: <a href=https://cloud.google.com/solutions/disaster-recovery-cookbook>https://cloud.google.com/solutions/disaster-recovery-cookbook</a>&#160;<a href=#fnref:6 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></div></article><hr style=margin-top:40px;margin-bottom:40px><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//gfraser.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></main></div><footer class=footer><span class=footer_item></span>&nbsp;<div class=footer_social-icons><a href=https://twitter.com/georgeafraser target=_blank rel="noopener noreferrer me" title=Twitter><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9.0 01-3.14 1.53 4.48 4.48.0 00-7.86 3v1A10.66 10.66.0 013 4s-4 9 5 13a11.64 11.64.0 01-7 2c9 5 20 0 20-11.5a4.5 4.5.0 00-.08-.83A7.72 7.72.0 0023 3z"/></svg></a><a href=https://www.linkedin.com/in/georgeafraser/ target=_blank rel="noopener noreferrer me" title=Linkedin><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a><a href=index.xml target=_blank rel="noopener noreferrer me" title=Rss><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></div><small class=footer_copyright>© 2023 George Fraser.
-Powered by <a href=https://github.com/hugo-sid/hugo-blog-awesome target=_blank rel=noopener>Hugo blog awesome</a>.</small></footer><a href=# title="Go to top" id=totop><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentcolor" stroke="currentcolor" viewBox="0 96 960 960"><path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197z"/></svg></a><script src=https://www.gfraser.co.uk/js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30+lSNuSkl4QXuNyy8="></script></body></html>
+Multi-Cloud</p>
+<p>Traditional vs. Rebuild</p>
+<p>Cloud Resilience Principles</p>
+<p>Recreatability</p>
+<p>Horizontal Scaling</p>
+<p>Stateless Services</p>
+<p>Immutable deployments - no changes possible to prod systems, changes have to be made, tested and deployed.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>AWS Innovation at Scale: <a href="https://youtu.be/JIQETrFC_SQ">https://youtu.be/JIQETrFC_SQ</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>AWS DR guidelines: <a href="https://d0.awsstatic.com/whitepapers/aws-disaster-recovery.pdf">https://d0.awsstatic.com/whitepapers/aws-disaster-recovery.pdf</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>AWS S3 outage: <a href="https://www.theregister.co.uk/2017/03/01/s3_outage_exposes_amazonian_internet_bottleneck/">https://www.theregister.co.uk/2017/03/01/s3_outage_exposes_amazonian_internet_bottleneck/</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>AWS EC2 SLA: <a href="https://aws.amazon.com/ec2/sla/">https://aws.amazon.com/ec2/sla/</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p>Azure BC best practice guide : <a href="https://docs.microsoft.com/en-us/azure/best-practices-availability-paired-regions">https://docs.microsoft.com/en-us/azure/best-practices-availability-paired-regions</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p>Google DR guidance: <a href="https://cloud.google.com/solutions/disaster-recovery-cookbook">https://cloud.google.com/solutions/disaster-recovery-cookbook</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+            </div>
+        </article><hr style="margin-top: 40px; margin-bottom: 40px;" />
+<div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "gfraser" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://twitter.com/georgeafraser" target="_blank" rel="noopener noreferrer me"
+    title="Twitter">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+    </path>
+</svg>
+</a>
+<a href="https://www.linkedin.com/in/georgeafraser/" target="_blank" rel="noopener noreferrer me"
+    title="Linkedin">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+</a>
+<a href="index.xml" target="_blank" rel="noopener noreferrer me"
+    title="Rss">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2025 George Fraser.
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+    
+    
+        
+    
+
+    
+    
+        
+    
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>
