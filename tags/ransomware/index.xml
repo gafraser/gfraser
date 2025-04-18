@@ -1,42 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Ransomware on Respond:Recover</title>
-    <link>http://localhost:1313/tags/ransomware/</link>
-    <description>Recent content in Ransomware on Respond:Recover</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language>
-    <lastBuildDate>Fri, 20 Oct 2023 18:34:42 +0100</lastBuildDate><atom:link href="http://localhost:1313/tags/ransomware/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Principles For Data Recovery</title>
-      <link>http://localhost:1313/posts/principles_for_data_recovery/</link>
-      <pubDate>Fri, 20 Oct 2023 18:34:42 +0100</pubDate>
-      
-      <guid>http://localhost:1313/posts/principles_for_data_recovery/</guid>
-      
-      <description>&lt;p&gt;Data Recovery is a complex topic to manage.&lt;/p&gt;
-&lt;p&gt;Recovery Point Objectives are defined by business teams.&lt;/p&gt;
-&lt;p&gt;Not all organisations are convinced that there is a reasonable need to mitigate complex data issues post an extreme disruption such as a cyber attack, this can be evidenced in the following paper created as a joint exercise between SIFMA and Protiviti:&lt;/p&gt;
-&lt;p&gt;Protiviti &lt;a href=&#34;https://www.protiviti.com/gl-en/insights-paper/principles-for-data-recovery-severe-cyber-scenario&#34;&gt;https://www.protiviti.com/gl-en/insights-paper/principles-for-data-recovery-severe-cyber-scenario&lt;/a&gt;&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sequenceDiagram
-    participant User
-    participant IT
-    participant Security
-    participant Backup
-    participant Service
-    User-&amp;gt;&amp;gt;IT: Reports ransomware attack
-    IT-&amp;gt;&amp;gt;Security: Confirms ransomware infection
-    Security-&amp;gt;&amp;gt;IT: Performs forensics analysis
-    IT-&amp;gt;&amp;gt;Backup: Restores data from backup
-    Backup-&amp;gt;&amp;gt;IT: Confirms data restoration
-    IT-&amp;gt;&amp;gt;Service: Restarts service
-    Service-&amp;gt;&amp;gt;IT: Confirms service availability
-    IT-&amp;gt;&amp;gt;Security: Validates service integrity
-    Security-&amp;gt;&amp;gt;IT: Confirms service validation
-    IT-&amp;gt;&amp;gt;User: Informs user of service recovery
-&lt;/code&gt;&lt;/pre&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ransomware on Respond:Recover</title><link>https://www.gfraser.co.uk/tags/ransomware/</link><description>Recent content in Ransomware on Respond:Recover</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Fri, 20 Oct 2023 18:34:42 +0100</lastBuildDate><atom:link href="https://www.gfraser.co.uk/tags/ransomware/index.xml" rel="self" type="application/rss+xml"/><item><title>Principles For Data Recovery</title><link>https://www.gfraser.co.uk/posts/principles_for_data_recovery/</link><pubDate>Fri, 20 Oct 2023 18:34:42 +0100</pubDate><guid>https://www.gfraser.co.uk/posts/principles_for_data_recovery/</guid><description>&lt;p>Data Recovery is a complex topic to manage.&lt;/p>
+&lt;p>Recovery Point Objectives are defined by business teams.&lt;/p>
+&lt;p>Not all organisations are convinced that there is a reasonable need to mitigate complex data issues post an extreme disruption such as a cyber attack, this can be evidenced in the following paper created as a joint exercise between SIFMA and Protiviti:&lt;/p>
+&lt;p>Protiviti &lt;a href="https://www.protiviti.com/gl-en/insights-paper/principles-for-data-recovery-severe-cyber-scenario">https://www.protiviti.com/gl-en/insights-paper/principles-for-data-recovery-severe-cyber-scenario&lt;/a>&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-mermaid" data-lang="mermaid">sequenceDiagram
+participant User
+participant IT
+participant Security
+participant Backup
+participant Service
+User-&amp;gt;&amp;gt;IT: Reports ransomware attack
+IT-&amp;gt;&amp;gt;Security: Confirms ransomware infection
+Security-&amp;gt;&amp;gt;IT: Performs forensics analysis
+IT-&amp;gt;&amp;gt;Backup: Restores data from backup
+Backup-&amp;gt;&amp;gt;IT: Confirms data restoration
+IT-&amp;gt;&amp;gt;Service: Restarts service
+Service-&amp;gt;&amp;gt;IT: Confirms service availability
+IT-&amp;gt;&amp;gt;Security: Validates service integrity
+Security-&amp;gt;&amp;gt;IT: Confirms service validation
+IT-&amp;gt;&amp;gt;User: Informs user of service recovery
+&lt;/code>&lt;/pre></description></item></channel></rss>

@@ -1,24 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Pages on Respond:Recover</title>
-    <link>http://localhost:1313/pages/</link>
-    <description>Recent content in Pages on Respond:Recover</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language>
-    <lastBuildDate>Sat, 01 Jan 2022 21:02:45 +0000</lastBuildDate><atom:link href="http://localhost:1313/pages/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>About</title>
-      <link>http://localhost:1313/pages/about/</link>
-      <pubDate>Sat, 01 Jan 2022 21:02:45 +0000</pubDate>
-      
-      <guid>http://localhost:1313/pages/about/</guid>
-      
-      <description>&lt;p&gt;I’m George Fraser, currently Group Head of Operational Resilience Frameworks and SME for one of the largest financial institutions in the world. I also support the Scottish Government and sit on their National Cyber Resilience Advisory Board.&lt;/p&gt;
-&lt;p&gt;Since 2006 I’ve been working to improve resilience within the financial services sector, helping to ensure that large banks meet their moral and societal expectations in the provision of banking services.&lt;/p&gt;
-&lt;p&gt;I’ve been involved in large complex banking programmes, recovery from significant operational incidents, and the development of industry guidance, policies and frameworks related to resilience.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pages on Respond:Recover</title><link>https://www.gfraser.co.uk/pages/</link><description>Recent content in Pages on Respond:Recover</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Sat, 01 Jan 2022 21:02:45 +0000</lastBuildDate><atom:link href="https://www.gfraser.co.uk/pages/index.xml" rel="self" type="application/rss+xml"/><item><title>About</title><link>https://www.gfraser.co.uk/pages/about/</link><pubDate>Sat, 01 Jan 2022 21:02:45 +0000</pubDate><guid>https://www.gfraser.co.uk/pages/about/</guid><description>&lt;p>I’m George Fraser, an Operational Resilience Specialist.&lt;/p>
+&lt;p>I’m currently Group Head of Operational Resilience Frameworks and SME for a Globally Systemic Bank. I also support the Scottish Government and sit on their National Cyber Resilience Advisory Board.&lt;/p>
+&lt;p>Since 2006 I’ve been working to improve resilience within the financial services sector, helping to ensure that large banks meet their moral and societal expectations in the provision of banking services.&lt;/p>
+&lt;p>I’ve been involved in large complex banking programmes, recovery from significant operational incidents, and the development of industry guidance, policies and frameworks related to resilience.&lt;/p></description></item></channel></rss>

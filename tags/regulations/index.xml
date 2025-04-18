@@ -1,24 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Regulations on Respond:Recover</title>
-    <link>http://localhost:1313/tags/regulations/</link>
-    <description>Recent content in Regulations on Respond:Recover</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language>
-    <lastBuildDate>Thu, 22 Dec 2022 12:39:37 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/regulations/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>UK Operational Resilience Regulations</title>
-      <link>http://localhost:1313/posts/regulation/</link>
-      <pubDate>Thu, 22 Dec 2022 12:39:37 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/regulation/</guid>
-      
-      <description>&lt;p&gt;&lt;a href=&#34;https://www.gfraser.co.uk/2021/03/29/uk-banking-regulators-publish-final-operational-resilience-policy/&#34;&gt;UK Banking Regulators publish final Operational Resilience Policy&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Having spent a fair chunk of my time over the last two years on both direct feedback on Operational Resilience and working collaboratively with peers on some of the implementation standards, it&amp;rsquo;s pleasing to see the influence that work has had on the final policies. Analysis to come later, but the links are here:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/statement-of-policy/2021/operational-resilience-march-2021.pdf&#34;&gt;Statement of Policy&lt;/a&gt; – Outlines where the Operational Resilience Policy sits within the context of Governance, Operational Risk, Business Continuity and Outsourcing policies.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Regulations on Respond:Recover</title><link>https://www.gfraser.co.uk/tags/regulations/</link><description>Recent content in Regulations on Respond:Recover</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Thu, 22 Dec 2022 12:39:37 +0000</lastBuildDate><atom:link href="https://www.gfraser.co.uk/tags/regulations/index.xml" rel="self" type="application/rss+xml"/><item><title>UK Operational Resilience Regulations</title><link>https://www.gfraser.co.uk/posts/regulation/</link><pubDate>Thu, 22 Dec 2022 12:39:37 +0000</pubDate><guid>https://www.gfraser.co.uk/posts/regulation/</guid><description>&lt;p>&lt;a href="https://www.gfraser.co.uk/2021/03/29/uk-banking-regulators-publish-final-operational-resilience-policy/">UK Banking Regulators publish final Operational Resilience Policy&lt;/a>&lt;/p>
+&lt;p>Having spent a fair chunk of my time over the last two years on both direct feedback on Operational Resilience and working collaboratively with peers on some of the implementation standards, it&amp;rsquo;s pleasing to see the influence that work has had on the final policies. Analysis to come later, but the links are here:&lt;/p>
+&lt;p>&lt;a href="https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/statement-of-policy/2021/operational-resilience-march-2021.pdf">Statement of Policy&lt;/a> – Outlines where the Operational Resilience Policy sits within the context of Governance, Operational Risk, Business Continuity and Outsourcing policies.&lt;/p></description></item></channel></rss>
